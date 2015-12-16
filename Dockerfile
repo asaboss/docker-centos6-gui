@@ -1,4 +1,4 @@
-FROM babim/centos6base
+FROM babim/centos6base:ssh
 
 MAINTAINER "Duc Anh Babim" <ducanh.babim@yahoo.com>
 
