@@ -19,4 +19,5 @@ if [ "${AUTHORIZED_KEYS}" != "**None**" ]; then
     done
 fi
 
+exec vncserver
 exec /usr/sbin/sshd -D
