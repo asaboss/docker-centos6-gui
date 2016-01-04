@@ -5,7 +5,10 @@ RUN yum -y groupinstall "Desktop" "Desktop Platform" "X Window System" "Fonts" &
     yum clean all
 
 # Define default command.
-RUN echo "bash" > /startup.sh && echo "vncserver" >> /startup.sh && echo "/usr/sbin/sshd -D" >> /startup.sh && chmod +x /startup.sh
+RUN echo '#!/bin/bash' > /startup.sh && \
+    echo "rm -f /tmp/.X*" >> /startup.sh && \
+    echo "vncserver :1" >> /startup.sh && \
+    echo "/usr/sbin/sshd -D" >> /startup.sh && chmod +x /startup.sh
 CMD ["/startup.sh"]
 
 # Expose ports.
