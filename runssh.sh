@@ -19,6 +19,6 @@ if [ "${AUTHORIZED_KEYS}" != "**None**" ]; then
     done
 fi
 
-rm -f /tmp/.X*
+rm -rf /tmp/.X*
 exec vncserver :1
 exec /usr/sbin/sshd -D
